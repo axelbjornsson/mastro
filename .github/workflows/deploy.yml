@@ -15,14 +15,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install Deno
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Install dependencies
-        run: "deno add jsr:@mastrojs/mastro && deno add jsr:@mastrojs/markdown"
+        run: "bun install"
       - name: Build step
-        run: "deno run -A @mastrojs/mastro/generator"
+        run: "bun run generate"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

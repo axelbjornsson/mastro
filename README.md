@@ -1,6 +1,42 @@
-This is the basic JavaScript template for [Mastro](https://mastrojs.github.io). If you're not already viewing this on github.dev, [open it](https://github.dev/mastrojs/template-basic).
+This is a TypeScript portfolio + blog built with [Mastro](https://mastrojs.github.io) and [Bun](https://bun.sh).
 
-## 🔧 One-time setup
+## � Getting Started
+
+### Prerequisites
+- [Bun](https://bun.sh) runtime installed
+
+### Development
+
+1. Install dependencies:
+   ```bash
+   bun install
+   ```
+
+2. Start the development server:
+   ```bash
+   bun run start
+   ```
+   Open http://localhost:8000 to view your site.
+
+3. Generate static site:
+   ```bash
+   bun run generate
+   ```
+   Output will be in the `generated/` folder.
+
+4. Type check:
+   ```bash
+   bun run check
+   ```
+
+## 📂 Project Structure
+
+- `routes/*.server.ts` - Server routes (pages, APIs)
+- `components/*.ts` - Reusable components
+- `routes/styles.css` - Global styles
+- `ai/` - AI context documentation
+
+## 🔧 One-time setup (VS Code)
 
 1. Click **Install** in the small dialog in the bottom right that says "Do you want to install the recommended extensions from mastro and FAST for this repository?"
 2. Click **Trust Publishers & Install**
