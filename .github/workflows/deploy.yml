@@ -36,3 +36,27 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-to-root:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: "bun install"
+      - name: Build step
+        run: "bun run generate"
+      - name: Push to axelbjornsson.github.io
+        run: |
+          git clone "https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/axelbjornsson/axelbjornsson.github.io.git" deploy-repo
+          cd deploy-repo
+          git rm -rf . --quiet
+          cp -r ../generated/. .
+          touch .nojekyll
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add .
+          git commit -m "Deploy from mastro [skip ci]" || echo "Nothing to commit"
+          git push
