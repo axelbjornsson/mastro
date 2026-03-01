@@ -19,3 +19,56 @@ img {
 @view-transition {
   navigation: auto;
 }
+
+body {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.site-name {
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4b5563;
+}
+
+nav a:hover {
+  color: #111827;
+}
+
+.hero {
+  padding-block: 3rem;
+}
+
+.hero h1 {
+  margin-top: 0;
+}
+
+.section {
+  margin-block: 2.5rem;
+}
+
+.section h2 {
+  margin-top: 0;
+}
